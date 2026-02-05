@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zx3Store :: Premium Cracked Accounts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+    </script>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-text">ZX3STORE INITIALIZING...</div>
+        <div class="preloader-bar">
+            <div class="preloader-progress" id="preloaderProgress"></div>
+        </div>
+        <div class="mt-2" style="color: var(--text-secondary); font-size: 0.9rem;">
+            <i class="fas fa-shield-alt"></i> ENCRYPTED CONNECTION ESTABLISHED
+        </div>
+    </div>
+
+    <!-- Matrix Rain Background -->
+    <canvas id="matrixRain"></canvas>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo" data-page="home">
+            <i class="fas fa-bolt text-green"></i> ZX3<span>STORE</span>
+        </a>
+        
+        <div class="nav-links">
+            <a href="#" class="nav-link active" data-page="home">HOME</a>
+            <a href="#" class="nav-link" data-page="products">PRODUCTS</a>
+            <a href="#" class="nav-link" data-page="cart">
+                <i class="fas fa-shopping-cart cart-icon">
+                    <span class="cart-count">0</span>
+                </i>
+            </a>
+            <a href="#" class="nav-link" data-page="dashboard">DASHBOARD</a>
+            <a href="#" class="nav-link" data-page="admin">ADMIN</a>
+        </div>
+    </header>
+
+    <!-- Main App Container -->
+    <div id="app">
+        <!-- Home Page -->
+        <div class="page active" id="home-page">
+            <section class="hero">
+                <h1>
+                    <span class="typing-text" id="typingText"></span>
+                </h1>
+                <p class="hero-subtitle">
+                    Access premium subscriptions at 90% off. Instant delivery. Anonymous payments. <span class="text-green">No questions asked.</span>
+                </p>
+                
+                <div class="categories">
+                    <button class="category-btn active" data-category="all">
+                        <i class="fas fa-globe"></i> ALL PRODUCTS
+                    </button>
+                    <button class="category-btn" data-category="streaming">
+                        <i class="fas fa-play-circle"></i> STREAMING
+                    </button>
+                    <button class="category-btn" data-category="ai">
+                        <i class="fas fa-robot"></i> AI TOOLS
+                    </button>
+                    <button class="category-btn" data-category="vpn">
+                        <i class="fas fa-shield-alt"></i> VPN & SECURITY
+                    </button>
+                    <button class="category-btn" data-category="design">
+                        <i class="fas fa-paint-brush"></i> DESIGN
+                    </button>
+                    <button class="category-btn" data-category="productivity">
+                        <i class="fas fa-tools"></i> PRODUCTIVITY
+                    </button>
+                </div>
+            </section>
+
+            <section class="container">
+                <h2 class="text-center mb-2" style="font-family: 'Orbitron'; font-size: 2rem;">
+                    <span class="text-green">TRENDING</span> PRODUCTS
+                </h2>
+                
+                <div class="trust-badges" style="justify-content: center; margin-bottom: 3rem;">
+                    <div class="trust-badge">
+                        <i class="fab fa-bitcoin"></i> Bitcoin Accepted
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-bolt"></i> Instant Delivery
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-user-secret"></i> 100% Anonymous
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-headset"></i> 24/7 Support
+                    </div>
+                </div>
+                
+                <div class="products-grid" id="featured-products">
+                    <!-- Featured products will be dynamically loaded here -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Products Page -->
+        <div class="page" id="products-page">
+            <div class="container">
+                <h1 class="mb-2" style="font-family: 'Orbitron'; font-size: 2.5rem;">
+                    ALL <span class="text-green">PRODUCTS</span>
+                </h1>
+                
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                    <input type="text" id="searchProducts" class="promo-input" placeholder="Search products..." style="flex: 1; min-width: 250px;">
+                    <select id="sortProducts" class="promo-input" style="width: 200px;">
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+                
+                <div class="products-grid" id="all-products">
+                    <!-- All products will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Detail Page -->
+        <div class="page" id="product-detail-page">
+            <div class="container">
+                <button id="back-to-products" class="btn-add-cart mb-2">
+                    <i class="fas fa-arrow-left"></i> Back to Products
+                </button>
+                
+                <div class="product-detail">
+                    <div class="product-detail-image">
+                        <i class="fab fa-spotify product-detail-icon" id="detail-icon"></i>
+                    </div>
+                    
+                    <div class="product-detail-info">
+                        <h1 class="product-detail-title" id="detail-title">Product Name</h1>
+                        <div class="product-detail-price" id="detail-price">$0.00</div>
+                        
+                        <div class="product-stock mb-2">
+                            <div class="stock-badge" id="detail-stock">In Stock: 15</div>
+                            <div class="last-sold" id="detail-last-sold">Last sold 5 min ago</div>
+                        </div>
+                        
+                        <p class="product-detail-description" id="detail-description">
+                            Product description will appear here.
+                        </p>
+                        
+                        <h3 class="mb-1 text-green">WHAT YOU GET:</h3>
+                        <ul class="features-list mb-3">
+                            <li><i class="fas fa-check"></i> <span id="feature1">Premium account credentials (email:password)</span></li>
+                            <li><i class="fas fa-check"></i> <span id="feature2">30-day replacement warranty</span></li>
+                            <li><i class="fas fa-check"></i> <span id="feature3">Instant delivery after payment</span></li>
+                            <li><i class="fas fa-check"></i> <span id="feature4">Works worldwide</span></li>
+                            <li><i class="fas fa-check"></i> <span id="feature5">No VPN required</span></li>
+                        </ul>
+                        
+                        <div class="action-buttons">
+                            <button class="btn-add-cart" id="add-to-cart-btn">
+                                <i class="fas fa-cart-plus"></i> ADD TO CART
+                            </button>
+                            <button class="btn-buy-now" id="buy-now-btn">
+                                <i class="fas fa-bolt"></i> BUY NOW
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reviews Section -->
+                <div class="dashboard-card mt-3">
+                    <h2>USER REVIEWS <span class="text-magenta">(4.9/5.0)</span></h2>
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <div style="font-size: 2rem; color: gold; margin-right: 1rem;">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div style="color: var(--text-secondary);">Based on 247 verified purchases</div>
+                    </div>
+                    
+                    <div class="review">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <div>
+                                <strong class="text-green">@darkhacker91</strong>
+                                <div style="font-size: 0.9rem; color: gold;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div style="color: var(--text-secondary); font-size: 0.9rem;">2 days ago</div>
+                        </div>
+                        <p>Working perfectly! Got my account in under 5 minutes. Will buy again.</p>
+                    </div>
+                    
+                    <div class="review mt-2">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <div>
+                                <strong class="text-green">@cyberghost</strong>
+                                <div style="font-size: 0.9rem; color: gold;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div style="color: var(--text-secondary); font-size: 0.9rem;">1 week ago</div>
+                        </div>
+                        <p>Third purchase from Zx3Store. Never had any issues. Legit service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Page -->
+        <div class="page" id="cart-page">
+            <div class="cart-container">
+                <h1 class="mb-2" style="font-family: 'Orbitron'; font-size: 2.5rem;">
+                    YOUR <span class="text-green">CART</span>
+                </h1>
+                
+                <div class="cart-items" id="cart-items-container">
+                    <!-- Cart items will be dynamically loaded here -->
+                    <div class="text-center" id="empty-cart-message">
+                        <i class="fas fa-shopping-cart" style="font-size: 4rem; color: var(--text-secondary); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--text-secondary);">YOUR CART IS EMPTY</h3>
+                        <p style="color: var(--text-secondary);">Add some products to get started</p>
+                        <button class="btn-buy mt-2" data-page="products">BROWSE PRODUCTS</button>
+                    </div>
+                </div>
+                
+                <div class="cart-summary" id="cart-summary" style="display: none;">
+                    <h2 class="mb-2" style="font-family: 'Orbitron'; color: var(--accent-green);">ORDER SUMMARY</h2>
+                    
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Service Fee</span>
+                        <span>$1.99</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Discount</span>
+                        <span id="cart-discount">$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>TOTAL</span>
+                        <span id="cart-total">$0.00</span>
+                    </div>
+                    
+                    <div class="promo-code">
+                        <input type="text" id="promoCode" class="promo-input" placeholder="Enter promo code">
+                        <button class="btn-apply" id="applyPromo">APPLY</button>
+                    </div>
+                    
+                    <button class="btn-checkout" id="proceed-checkout">
+                        <i class="fas fa-lock"></i> PROCEED TO CHECKOUT
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkout Page -->
+        <div class="page" id="checkout-page">
+            <div class="checkout-container">
+                <h1 class="mb-2" style="font-family: 'Orbitron'; font-size: 2.5rem;">
+                    SECURE <span class="text-green">CHECKOUT</span>
+                </h1>
+                
+                <div class="payment-methods">
+                    <div class="payment-method active" data-method="btc">
+                        <i class="fab fa-bitcoin payment-icon"></i>
+                        <h3>BITCOIN (BTC)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Recommended</p>
+                    </div>
+                    <div class="payment-method" data-method="xmr">
+                        <i class="fas fa-user-secret payment-icon"></i>
+                        <h3>MONERO (XMR)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Most Anonymous</p>
+                    </div>
+                    <div class="payment-method" data-method="usdt">
+                        <i class="fas fa-coins payment-icon"></i>
+                        <h3>USDT (TRC20)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Fast & Stable</p>
+                    </div>
+                    <div class="payment-method" data-method="ltc">
+                        <i class="fas fa-bolt payment-icon"></i>
+                        <h3>LITECOIN (LTC)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Fast Confirmation</p>
+                    </div>
+                </div>
+                
+                <div class="payment-details">
+                    <h2 class="mb-1" style="font-family: 'Orbitron'; color: var(--accent-green);">PAYMENT DETAILS</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Send <strong id="payment-amount">$0.00</strong> to the address below. After payment, click "I HAVE PAID" and wait for confirmation.
+                    </p>
+                    
+                    <div class="wallet-address">
+                        <span id="wallet-address">bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</span>
+                        <button class="btn-copy" data-address="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh">
+                            <i class="far fa-copy"></i> COPY
+                        </button>
+                    </div>
+                    
+                    <div class="qr-code" id="qr-code">
+                        <div style="text-align: center; padding: 1rem;">
+                            <div style="font-size: 3rem; margin-bottom: 0.5rem;">QR</div>
+                            <div>CODE</div>
+                        </div>
+                    </div>
+                    
+                    <div style="background-color: rgba(255, 0, 170, 0.05); border: 1px solid rgba(255, 0, 170, 0.3); padding: 1rem; border-radius: 5px; margin-top: 1.5rem;">
+                        <h3 class="text-magenta mb-1"><i class="fas fa-exclamation-triangle"></i> IMPORTANT:</h3>
+                        <ul style="color: var(--text-secondary); padding-left: 1.2rem;">
+                            <li>Send the exact amount shown above</li>
+                            <li>Include the transaction fee in your payment</li>
+                            <li>Do not send from an exchange (use personal wallet)</li>
+                            <li>Delivery is automatic after 1 confirmation</li>
+                            <li>Contact support if you don't receive within 30 minutes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-3">
+                        <label style="display: block; margin-bottom: 0.5rem; color: var(--accent-green);">Transaction ID (TXID)</label>
+                        <input type="text" id="txid-input" class="promo-input" placeholder="Paste your transaction ID here">
+                        <button class="btn-checkout mt-2" id="confirm-payment">
+                            <i class="fas fa-check-circle"></i> I HAVE PAID, CONFIRM ORDER
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div class="page" id="dashboard-page">
+            <div class="dashboard-container">
+                <div class="dashboard-sidebar">
+                    <div class="dashboard-user">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <div class="user-info">
+                            <h3 id="username">@anonymous</h3>
+                            <p>Member since 2023</p>
+                        </div>
+                    </div>
+                    
+                    <ul class="dashboard-menu">
+                        <li><a href="#" class="active" data-dashboard="overview"><i class="fas fa-chart-line"></i> Overview</a></li>
+                        <li><a href="#" data-dashboard="orders"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+                        <li><a href="#" data-dashboard="subscriptions"><i class="fas fa-sync-alt"></i> Subscriptions</a></li>
+                        <li><a href="#" data-dashboard="support"><i class="fas fa-headset"></i> Support</a></li>
+                        <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                    
+                    <div class="dashboard-card mt-3">
+                        <h3 class="text-green">WALLET BALANCE</h3>
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--accent-green);">$0.00</div>
+                        <button class="btn-add-cart mt-1" style="width: 100%;">ADD FUNDS</button>
+                    </div>
+                </div>
+                
+                <div class="dashboard-content">
+                    <!-- Dashboard Overview -->
+                    <div class="dashboard-section" id="dashboard-overview">
+                        <div class="dashboard-card">
+                            <h2>WELCOME BACK, <span class="text-green">@ANONYMOUS</span></h2>
+                            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Your latest account activity and statistics</p>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                                <div style="background-color: rgba(0, 255, 157, 0.05); border: 1px solid rgba(0, 255, 157, 0.2); border-radius: 8px; padding: 1.5rem; text-align: center;">
+                                    <div style="font-size: 2rem; font-weight: 700; color: var(--accent-green);">7</div>
+                                    <div style="color: var(--text-secondary);">Total Orders</div>
+                                </div>
+                                <div style="background-color: rgba(255, 0, 170, 0.05); border: 1px solid rgba(255, 0, 170, 0.2); border-radius: 8px; padding: 1.5rem; text-align: center;">
+                                    <div style="font-size: 2rem; font-weight: 700; color: var(--accent-magenta);">$89.93</div>
+                                    <div style="color: var(--text-secondary);">Total Spent</div>
+                                </div>
+                                <div style="background-color: rgba(26, 0, 51, 0.5); border: 1px solid rgba(0, 255, 157, 0.2); border-radius: 8px; padding: 1.5rem; text-align: center;">
+                                    <div style="font-size: 2rem; font-weight: 700; color: var(--accent-green);">3</div>
+                                    <div style="color: var(--text-secondary);">Active Subs</div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="mb-1">RECENT ORDERS</h3>
+                            <table class="orders-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Product</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Invoice</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recent-orders">
+                                    <!-- Recent orders will be dynamically loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Orders Section -->
+                    <div class="dashboard-section hidden" id="dashboard-orders">
+                        <div class="dashboard-card">
+                            <h2>ORDER HISTORY</h2>
+                            <table class="orders-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Product</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Invoice</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="all-orders">
+                                    <!-- All orders will be dynamically loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Subscriptions Section -->
+                    <div class="dashboard-section hidden" id="dashboard-subscriptions">
+                        <div class="dashboard-card">
+                            <h2>ACTIVE SUBSCRIPTIONS</h2>
+                            <div class="products-grid">
+                                <!-- Active subscriptions will be dynamically loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Support Section -->
+                    <div class="dashboard-section hidden" id="dashboard-support">
+                        <div class="dashboard-card">
+                            <h2>SUPPORT TICKETS</h2>
+                            <div style="background-color: rgba(0, 255, 157, 0.05); border: 1px solid rgba(0, 255, 157, 0.2); border-radius: 8px; padding: 2rem; text-align: center;">
+                                <i class="fas fa-headset" style="font-size: 3rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
+                                <h3 class="mb-1">NEED HELP?</h3>
+                                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                                    Contact our support team via Telegram or create a support ticket.
+                                </p>
+                                <button class="btn-buy-now" style="margin-right: 1rem;">
+                                    <i class="fab fa-telegram"></i> TELEGRAM
+                                </button>
+                                <button class="btn-add-cart">
+                                    <i class="fas fa-plus"></i> NEW TICKET
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Page -->
+        <div class="page" id="login-page">
+            <div class="container">
+                <div style="max-width: 400px; margin: 5rem auto;">
+                    <h1 class="mb-2 text-center" style="font-family: 'Orbitron'; font-size: 2.5rem;">
+                        <span class="text-green">ACCESS</span> DASHBOARD
+                    </h1>
+                    
+                    <div class="dashboard-card">
+                        <div class="mb-2 text-center">
+                            <i class="fas fa-user-secret" style="font-size: 4rem; color: var(--accent-green);"></i>
+                        </div>
+                        
+                        <div class="form-group mb-2">
+                            <label class="form-label">Username or Email</label>
+                            <input type="text" id="login-username" class="form-input" placeholder="Enter your username">
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" id="login-password" class="form-input" placeholder="Enter your password">
+                        </div>
+                        
+                        <button class="btn-checkout" id="login-btn">
+                            <i class="fas fa-sign-in-alt"></i> LOGIN
+                        </button>
+                        
+                        <div class="mt-2 text-center" style="color: var(--text-secondary); font-size: 0.9rem;">
+                            Don't have an account? <a href="#" style="color: var(--accent-green);">Register here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Panel -->
+        <div class="page" id="admin-page">
+            <div class="admin-container">
+                <!-- Admin Login -->
+                <div class="admin-login" id="admin-login">
+                    <h2>ADMIN ACCESS</h2>
+                    <div class="mb-2">
+                        <i class="fas fa-lock" style="font-size: 3rem; color: var(--accent-green);"></i>
+                    </div>
+                    
+                    <input type="password" id="admin-password" class="admin-input" placeholder="Enter admin password">
+                    <button class="btn-admin-login" id="admin-login-btn">LOGIN</button>
+                    
+                    <div class="mt-2" style="color: var(--text-secondary); font-size: 0.9rem;">
+                        Default password: <span class="text-green">zx3god</span>
+                    </div>
+                </div>
+                
+                <!-- Admin Panel (hidden by default) -->
+                <div class="admin-panel" id="admin-panel">
+                    <h1 class="mb-2" style="font-family: 'Orbitron'; font-size: 2.5rem;">
+                        ADMIN <span class="text-green">PANEL</span>
+                    </h1>
+                    
+                    <div class="admin-tabs">
+                        <button class="admin-tab active" data-admin="products">PRODUCTS</button>
+                        <button class="admin-tab" data-admin="orders">ORDERS</button>
+                        <button class="admin-tab" data-admin="customers">CUSTOMERS</button>
+                        <button class="admin-tab" data-admin="settings">SETTINGS</button>
+                    </div>
+                    
+                    <!-- Products Management -->
+                    <div class="admin-section active" id="admin-products">
+                        <div class="dashboard-card">
+                            <h2>MANAGE PRODUCTS</h2>
+                            <button class="btn-admin mb-2" id="add-product-btn">
+                                <i class="fas fa-plus"></i> ADD NEW PRODUCT
+                            </button>
+                            
+                            <table class="orders-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-products-list">
+                                    <!-- Products list for admin will be dynamically loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Orders Management -->
+                    <div class="admin-section" id="admin-orders">
+                        <div class="dashboard-card">
+                            <h2>MANAGE ORDERS</h2>
+                            <table class="orders-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Product</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-orders-list">
+                                    <!-- Orders list for admin will be dynamically loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ZX3STORE</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6;">
+                    The ultimate marketplace for premium cracked accounts and subscriptions. Anonymous, instant, reliable.
+                </p>
+                <div class="trust-badges mt-2">
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i> Encrypted
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-tachometer-alt"></i> Fast
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>CATEGORIES</h3>
+                <ul class="footer-links">
+                    <li><a href="#" data-page="products" data-category="streaming">Streaming Services</a></li>
+                    <li><a href="#" data-page="products" data-category="ai">AI Tools</a></li>
+                    <li><a href="#" data-page="products" data-category="vpn">VPN & Security</a></li>
+                    <li><a href="#" data-page="products" data-category="design">Design Software</a></li>
+                    <li><a href="#" data-page="products" data-category="productivity">Productivity Tools</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>SUPPORT</h3>
+                <ul class="footer-links">
+                    <li><a href="#" id="support-chat">Live Chat</a></li>
+                    <li><a href="#" data-page="dashboard" data-dashboard="support">Support Tickets</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Payment Help</a></li>
+                    <li><a href="#">Delivery Status</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>CONTACT</h3>
+                <ul class="footer-links">
+                    <li><i class="fab fa-telegram text-green"></i> Telegram: @zx3support</li>
+                    <li><i class="fas fa-envelope text-green"></i> Email: support@zx3store.cc</li>
+                    <li><i class="fas fa-globe text-green"></i> Tor: zx3store.onion</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-warning">
+            <p>
+                <i class="fas fa-exclamation-triangle"></i>
+                ALL SALES ARE FINAL. NO REFUNDS. USE AT YOUR OWN RISK.
+                <i class="fas fa-exclamation-triangle"></i>
+            </p>
+            <p class="mt-1" style="font-size: 0.8rem;">
+                © 2023 ZX3STORE. ALL RIGHTS RESERVED. THIS IS A DEMONSTRATION WEBSITE ONLY.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <h3>SUPPORT CHAT</h3>
+                <button class="chat-close" id="chat-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="chat-message support">
+                    <div class="message-bubble">
+                        Hello! How can I help you today?
+                    </div>
+                </div>
+                <div class="chat-message support">
+                    <div class="message-bubble">
+                        We're here 24/7 to assist with any issues.
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input" placeholder="Type your message...">
+                <button id="chat-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <div class="chat-button pulse-effect" id="chat-button">
+            <i class="fas fa-comment-alt"></i>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // INITIALIZATION & GLOBAL VARIABLES
+        // ============================================
+        
+        // Product database
+        const products = [
+            {
+                id: 1,
+                name: "Netflix Premium",
+                category: "streaming",
+                price: 4.99,
+                description: "Full access to Netflix Premium plan. 4K UHD, 4 screens simultaneously.",
+                icon: "fab fa-netflix",
+                stock: 23,
+                warranty: 30,
+                features: [
+                    "Premium account (email:password)",
+                    "30-day replacement warranty",
+                    "Works worldwide, no VPN needed",
+                    "Instant delivery after payment",
+                    "Unlimited movies & TV shows"
+                ]
+            },
+            {
+                id: 2,
+                name: "Spotify Premium",
+                category: "streaming",
+                price: 3.99,
+                description: "Spotify Premium account. Ad-free music, offline downloads, highest quality.",
+                icon: "fab fa-spotify",
+                stock: 42,
+                warranty: 30,
+                features: [
+                    "Premium account (email:password)",
+                    "30-day replacement warranty",
+                    "Ad-free music streaming",
+                    "Offline downloads included",
+                    "Highest audio quality"
+                ]
+            },
+            {
+                id: 3,
+                name: "ChatGPT Plus",
+                category: "ai",
+                price: 9.99,
+                description: "Full access to ChatGPT Plus with GPT-4. No usage limits.",
+                icon: "fas fa-robot",
+                stock: 18,
+                warranty: 30,
+                features: [
+                    "Premium account (email:password)",
+                    "Access to GPT-4",
+                    "No usage limits",
+                    "Priority access to new features",
+                    "Instant delivery"
+                ]
+            },
+            {
+                id: 4,
+                name: "Midjourney Pro",
+                category: "ai",
+                price: 12.99,
+                description: "Midjourney Pro subscription. Fast GPU hours, commercial license.",
+                icon: "fas fa-palette",
+                stock: 15,
+                warranty: 30,
+                features: [
+                    "Shared account access",
+                    "Commercial license included",
+                    "Fast GPU hours",
+                    "30-day replacement warranty",
+                    "Stealth mode enabled"
+                ]
+            },
+            {
+                id: 5,
+                name: "NordVPN Premium",
+                category: "vpn",
+                price: 5.99,
+                description: "NordVPN premium account. 6000+ servers, no logs policy.",
+                icon: "fas fa-shield-alt",
+                stock: 37,
+                warranty: 30,
+                features: [
+                    "Premium account (email:password)",
+                    "6000+ servers worldwide",
+                    "No logs policy",
+                    "6 simultaneous connections",
+                    "30-day replacement warranty"
+                ]
+            },
+            {
+                id: 6,
+                name: "Adobe All Apps",
+                category: "design",
+                price: 14.99,
+                description: "Full Adobe Creative Cloud suite. Photoshop, Premiere, After Effects, etc.",
+                icon: "fab fa-adobe",
+                stock: 12,
+                warranty: 30,
+                features: [
+                    "Shared team account",
+                    "All Adobe applications",
+                    "Cloud storage included",
+                    "Latest versions",
+                    "30-day replacement warranty"
+                ]
+            },
+            {
+                id: 7,
+                name: "Canva Pro",
+                category: "design",
+                price: 6.99,
+                description: "Canva Pro account. Premium templates, background remover, brand kits.",
+                icon: "fas fa-paint-brush",
+                stock: 28,
+                warranty: 30,
+                features: [
+                    "Premium account (email:password)",
+                    "All premium features unlocked",
+                    "100+ million premium images",
+                    "Background remover tool",
+                    "30-day replacement warranty"
+                ]
+            },
+            {
+                id: 8,
+                name: "Grammarly Premium",
+                category: "productivity",
+                price: 7.99,
+                description: "Grammarly Premium account. Advanced grammar check, plagiarism detector.",
+                icon: "fas fa-spell-check",
+                stock: 31,
+                warranty: 30,
+                features: [
+                    "Premium account (email:password)",
+                    "Advanced grammar checking",
+                    "Plagiarism detection",
+                    "Vocabulary enhancement",
+                    "30-day replacement warranty"
+                ]
+            },
+            {
+                id: 9,
+                name: "YouTube Premium",
+                category: "streaming",
+                price: 8.99,
+                description: "YouTube Premium account. Ad-free videos, background play, YouTube Music.",
+                icon: "fab fa-youtube",
+                stock: 19,
+                warranty: 30,
+                features: [
+                    "Premium account (email:password)",
+                    "Ad-free videos",
+                    "Background play",
+                    "YouTube Music included",
+                    "30-day replacement warranty"
+                ]
+            },
+            {
+                id: 10,
+                name: "Google AI / Gemini Pro",
+                category: "ai",
+                price: 11.99,
+                description: "Google AI Studio / Gemini Pro access. Advanced AI models by Google.",
+                icon: "fab fa-google",
+                stock: 14,
+                warranty: 30,
+                features: [
+                    "API key or account access",
+                    "Gemini Pro model access",
+                    "High rate limits",
+                    "30-day replacement warranty",
+                    "Commercial use allowed"
+                ]
+            },
+            {
+                id: 11,
+                name: "Disney+ Premium",
+                category: "streaming",
+                price: 5.99,
+                description: "Disney+ Premium account. 4K UHD, 4 simultaneous streams.",
+                icon: "fas fa-film",
+                stock: 25,
+                warranty: 30,
+                features: [
+                    "Premium account (email:password)",
+                    "4K UHD streaming",
+                    "4 simultaneous streams",
+                    "All Disney, Marvel, Star Wars content",
+                    "30-day replacement warranty"
+                ]
+            },
+            {
+                id: 12,
+                name: "ExpressVPN",
+                category: "vpn",
+                price: 6.99,
+                description: "ExpressVPN premium account. 3000+ servers, 94 countries.",
+                icon: "fas fa-user-secret",
+                stock: 22,
+                warranty: 30,
+                features: [
+                    "Premium account (email:password)",
+                    "3000+ servers worldwide",
+                    "94 countries",
+                    "No activity logs",
+                    "30-day replacement warranty"
+                ]
+            }
+        ];
+
+        // Cart data
+        let cart = JSON.parse(localStorage.getItem('zx3store_cart')) || [];
+        
+        // Current user session
+        let currentUser = JSON.parse(localStorage.getItem('zx3store_user')) || null;
+        
+        // Admin password
+        const ADMIN_PASSWORD = "zx3god";
+        
+        // Current page
+        let currentPage = 'home';
+        
+        // Selected category
+        let selectedCategory = 'all';
+        
+        // ============================================
+        // DOM ELEMENT REFERENCES
+        // ============================================
+        
+        // Preloader
+        const preloader = document.getElementById('preloader');
+        const preloaderProgress = document.getElementById('preloaderProgress');
+        
+        // Pages
+        const pages = document.querySelectorAll('.page');
+        
+        // Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const logo = document.querySelector('.logo');
+        
+        // Cart
+        const cartCount = document.querySelector('.cart-count');
+        
+        // Home page elements
+        const typingText = document.getElementById('typingText');
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const featuredProductsGrid = document.getElementById('featured-products');
+        
+        // Products page elements
+        const allProductsGrid = document.getElementById('all-products');
+        const searchProductsInput = document.getElementById('searchProducts');
+        const sortProductsSelect = document.getElementById('sortProducts');
+        
+        // Product detail page elements
+        const backToProductsBtn = document.getElementById('back-to-products');
+        const detailIcon = document.getElementById('detail-icon');
+        const detailTitle = document.getElementById('detail-title');
+        const detailPrice = document.getElementById('detail-price');
+        const detailStock = document.getElementById('detail-stock');
+        const detailLastSold = document.getElementById('detail-last-sold');
+        const detailDescription = document.getElementById('detail-description');
+        const featureElements = [
+            document.getElementById('feature1'),
+            document.getElementById('feature2'),
+            document.getElementById('feature3'),
+            document.getElementById('feature4'),
+            document.getElementById('feature5')
+        ];
+        const addToCartBtn = document.getElementById('add-to-cart-btn');
+        const buyNowBtn = document.getElementById('buy-now-btn');
+        
+        // Cart page elements
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+        const cartSummary = document.getElementById('cart-summary');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const cartDiscount = document.getElementById('cart-discount');
+        const cartTotal = document.getElementById('cart-total');
+        const promoCodeInput = document.getElementById('promoCode');
+        const applyPromoBtn = document.getElementById('applyPromo');
+        const proceedCheckoutBtn = document.getElementById('proceed-checkout');
+        
+        // Checkout page elements
+        const paymentMethods = document.querySelectorAll('.payment-method');
+        const paymentAmount = document.getElementById('payment-amount');
+        const walletAddress = document.getElementById('wallet-address');
+        const copyButtons = document.querySelectorAll('.btn-copy');
+        const txidInput = document.getElementById('txid-input');
+        const confirmPaymentBtn = document.getElementById('confirm-payment');
+        
+        // Dashboard elements
+        const dashboardSections = document.querySelectorAll('.dashboard-section');
+        const dashboardMenuLinks = document.querySelectorAll('.dashboard-menu a');
+        const recentOrdersTable = document.getElementById('recent-orders');
+        const allOrdersTable = document.getElementById('all-orders');
+        const logoutBtn = document.getElementById('logout-btn');
+        
+        // Login elements
+        const loginUsername = document.getElementById('login-username');
+        const loginPassword = document.getElementById('login-password');
+        const loginBtn = document.getElementById('login-btn');
+        
+        // Admin elements
+        const adminPasswordInput = document.getElementById('admin-password');
+        const adminLoginBtn = document.getElementById('admin-login-btn');
+        const adminLoginDiv = document.getElementById('admin-login');
+        const adminPanelDiv = document.getElementById('admin-panel');
+        const adminTabs = document.querySelectorAll('.admin-tab');
+        const adminSections = document.querySelectorAll('.admin-section');
+        
+        // Chat widget
+        const chatButton = document.getElementById('chat-button');
+        const chatWindow = document.getElementById('chat-window');
+        const chatClose = document.getElementById('chat-close');
+        const chatBody = document.getElementById('chat-body');
+        const chatInput = document.getElementById('chat-input');
+        const chatSend = document.getElementById('chat-send');
+        
+        // Support chat link
+        const supportChatLink = document.getElementById('support-chat');
+        
+        // ============================================
+        // UTILITY FUNCTIONS
+        // ============================================
+        
+        // Format currency
+        function formatCurrency(amount) {
+            return `$${amount.toFixed(2)}`;
+        }
+        
+        // Generate random stock update message
+        function getRandomLastSold() {
+            const times = ['2 min ago', '5 min ago', '10 min ago', '15 min ago', '20 min ago', '30 min ago', '1 hour ago'];
+            return times[Math.floor(Math.random() * times.length)];
+        }
+        
+        // Update cart count
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = count;
+        }
+        
+        // Save cart to localStorage
+        function saveCart() {
+            localStorage.setItem('zx3store_cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+        
+        // Get product by ID
+        function getProductById(id) {
+            return products.find(product => product.id === id);
+        }
+        
+        // ============================================
+        // PAGE RENDERING FUNCTIONS
+        // ============================================
+        
+        // Render product card
+        function renderProductCard(product) {
+            const lastSold = getRandomLastSold();
+            
+            return `
+                <div class="product-card" data-id="${product.id}">
+                    <div class="product-image">
+                        <i class="${product.icon} product-icon"></i>
+                        <div class="product-badge">-90%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-price">${formatCurrency(product.price)}</div>
+                        <div class="product-warranty">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>${product.warranty}-day warranty</span>
+                        </div>
+                        <div class="product-stock">
+                            <div class="stock-badge">In Stock: ${product.stock}</div>
+                            <div class="last-sold">Last sold ${lastSold}</div>
+                        </div>
+                        <button class="btn-buy add-to-cart" data-id="${product.id}">
+                            <i class="fas fa-cart-plus"></i> BUY NOW
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Render featured products on home page
+        function renderFeaturedProducts() {
+            // Get 6 random products
+            const shuffled = [...products].sort(() => 0.5 - Math.random());
+            const featured = shuffled.slice(0, 6);
+            
+            featuredProductsGrid.innerHTML = '';
+            featured.forEach(product => {
+                featuredProductsGrid.innerHTML += renderProductCard(product);
+            });
+            
+            // Add event listeners to buy buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    addToCart(productId);
+                });
+            });
+            
+            // Add event listeners to product cards for detail view
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    showProductDetail(productId);
+                });
+            });
+        }
+        
+        // Render all products on products page
+        function renderAllProducts(filterCategory = 'all', searchQuery = '', sortBy = 'popular') {
+            let filteredProducts = [...products];
+            
+            // Filter by category
+            if (filterCategory !== 'all') {
+                filteredProducts = filteredProducts.filter(product => product.category === filterCategory);
+            }
+            
+            // Filter by search query
+            if (searchQuery) {
+                const query = searchQuery.toLowerCase();
+                filteredProducts = filteredProducts.filter(product => 
+                    product.name.toLowerCase().includes(query) || 
+                    product.description.toLowerCase().includes(query)
+                );
+            }
+            
+            // Sort products
+            if (sortBy === 'price-low') {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (sortBy === 'price-high') {
+                filteredProducts.sort((a, b) => b.price - a.price);
+            } else if (sortBy === 'newest') {
+                filteredProducts.sort((a, b) => b.id - a.id);
+            }
+            // 'popular' is default order
+            
+            allProductsGrid.innerHTML = '';
+            
+            if (filteredProducts.length === 0) {
+                allProductsGrid.innerHTML = `
+                    <div class="text-center" style="grid-column: 1 / -1; padding: 3rem; color: var(--text-secondary);">
+                        <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <h3>NO PRODUCTS FOUND</h3>
+                        <p>Try adjusting your search or filter criteria</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            filteredProducts.forEach(product => {
+                allProductsGrid.innerHTML += renderProductCard(product);
+            });
+            
+            // Add event listeners to buy buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    addToCart(productId);
+                });
+            });
+            
+            // Add event listeners to product cards for detail view
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    showProductDetail(productId);
+                });
+            });
+        }
+        
+        // Show product detail page
+        function showProductDetail(productId) {
+            const product = getProductById(productId);
+            if (!product) return;
+            
+            // Update product detail page
+            detailIcon.className = `${product.icon} product-detail-icon`;
+            detailTitle.textContent = product.name;
+            detailPrice.textContent = formatCurrency(product.price);
+            detailStock.textContent = `In Stock: ${product.stock}`;
+            detailLastSold.textContent = `Last sold ${getRandomLastSold()}`;
+            detailDescription.textContent = product.description;
+            
+            // Update features
+            product.features.forEach((feature, index) => {
+                if (featureElements[index]) {
+                    featureElements[index].textContent = feature;
+                }
+            });
+            
+            // Update button data attributes
+            addToCartBtn.setAttribute('data-id', productId);
+            buyNowBtn.setAttribute('data-id', productId);
+            
+            // Switch to product detail page
+            switchPage('product-detail');
+        }
+        
+        // Render cart items
+        function renderCartItems() {
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = emptyCartMessage.innerHTML;
+                cartSummary.style.display = 'none';
+                return;
+            }
+            
+            cartSummary.style.display = 'block';
+            cartItemsContainer.innerHTML = '';
+            
+            let subtotal = 0;
+            
+            cart.forEach(item => {
+                const product = getProductById(item.id);
+                if (!product) return;
+                
+                const itemTotal = product.price * item.quantity;
+                subtotal += itemTotal;
+                
+                cartItemsContainer.innerHTML += `
+                    <div class="cart-item" data-id="${product.id}">
+                        <div class="cart-item-info">
+                            <i class="${product.icon} cart-item-icon"></i>
+                            <div class="cart-item-details">
+                                <h3>${product.name}</h3>
+                                <div class="cart-item-price">${formatCurrency(product.price)}</div>
+                            </div>
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="quantity-control">
+                                <button class="quantity-btn decrease-quantity" data-id="${product.id}">-</button>
+                                <span class="quantity">${item.quantity}</span>
+                                <button class="quantity-btn increase-quantity" data-id="${product.id}">+</button>
+                            </div>
+                            <button class="btn-remove remove-from-cart" data-id="${product.id}">
+                                <i class="fas fa-trash"></i> REMOVE
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            // Calculate totals
+            const serviceFee = 1.99;
+            const discount = 0; // Would be calculated from promo code
+            const total = subtotal + serviceFee - discount;
+            
+            cartSubtotal.textContent = formatCurrency(subtotal);
+            cartDiscount.textContent = formatCurrency(discount);
+            cartTotal.textContent = formatCurrency(total);
+            
+            // Update payment amount on checkout page
+            paymentAmount.textContent = formatCurrency(total);
+            
+            // Add event listeners to cart buttons
+            document.querySelectorAll('.decrease-quantity').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    updateCartQuantity(productId, -1);
+                });
+            });
+            
+            document.querySelectorAll('.increase-quantity').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    updateCartQuantity(productId, 1);
+                });
+            });
+            
+            document.querySelectorAll('.remove-from-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    removeFromCart(productId);
+                });
+            });
+        }
+        
+        // Render dashboard orders
+        function renderDashboardOrders() {
+            // Mock order data
+            const orders = [
+                { id: 'ZX3-4821', product: 'Netflix Premium', date: '2023-10-15', amount: 4.99, status: 'completed' },
+                { id: 'ZX3-4822', product: 'Spotify Premium', date: '2023-10-10', amount: 3.99, status: 'completed' },
+                { id: 'ZX3-4823', product: 'ChatGPT Plus', date: '2023-10-05', amount: 9.99, status: 'completed' },
+                { id: 'ZX3-4824', product: 'NordVPN Premium', date: '2023-10-01', amount: 5.99, status: 'pending' },
+                { id: 'ZX3-4825', product: 'Adobe All Apps', date: '2023-09-28', amount: 14.99, status: 'completed' },
+            ];
+            
+            // Render recent orders (first 3)
+            recentOrdersTable.innerHTML = '';
+            orders.slice(0, 3).forEach(order => {
+                recentOrdersTable.innerHTML += `
+                    <tr>
+                        <td>${order.id}</td>
+                        <td>${order.product}</td>
+                        <td>${order.date}</td>
+                        <td><span class="status-badge ${order.status === 'completed' ? 'status-completed' : 'status-pending'}">${order.status.toUpperCase()}</span></td>
+                        <td><button class="btn-invoice" data-order="${order.id}">INVOICE</button></td>
+                    </tr>
+                `;
+            });
+            
+            // Render all orders
+            allOrdersTable.innerHTML = '';
+            orders.forEach(order => {
+                allOrdersTable.innerHTML += `
+                    <tr>
+                        <td>${order.id}</td>
+                        <td>${order.product}</td>
+                        <td>${order.date}</td>
+                        <td>${formatCurrency(order.amount)}</td>
+                        <td><span class="status-badge ${order.status === 'completed' ? 'status-completed' : 'status-pending'}">${order.status.toUpperCase()}</span></td>
+                        <td><button class="btn-invoice" data-order="${order.id}">INVOICE</button></td>
+                    </tr>
+                `;
+            });
+            
+            // Add event listeners to invoice buttons
+            document.querySelectorAll('.btn-invoice').forEach(button => {
+                button.addEventListener('click', function() {
+                    const orderId = this.getAttribute('data-order');
+                    generateInvoice(orderId);
+                });
+            });
+        }
+        
+        // Render admin products
+        function renderAdminProducts() {
+            const adminProductsList = document.getElementById('admin-products-list');
+            if (!adminProductsList) return;
+            
+            adminProductsList.innerHTML = '';
+            
+            products.forEach(product => {
+                adminProductsList.innerHTML += `
+                    <tr>
+                        <td>${product.id}</td>
+                        <td>${product.name}</td>
+                        <td>${product.category}</td>
+                        <td>${formatCurrency(product.price)}</td>
+                        <td>${product.stock}</td>
+                        <td>
+                            <button class="btn-invoice edit-product" data-id="${product.id}" style="margin-right: 0.5rem;">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-remove delete-product" data-id="${product.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+        
+        // ============================================
+        // CART FUNCTIONS
+        // ============================================
+        
+        // Add product to cart
+        function addToCart(productId) {
+            const product = getProductById(productId);
+            if (!product) return;
+            
+            // Check if product is already in cart
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: productId,
+                    quantity: 1
+                });
+            }
+            
+            saveCart();
+            
+            // Show notification
+            showNotification(`${product.name} added to cart!`);
+            
+            // If on cart page, refresh the display
+            if (currentPage === 'cart') {
+                renderCartItems();
+            }
+        }
+        
+        // Update cart quantity
+        function updateCartQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (!item) return;
+            
+            item.quantity += change;
+            
+            if (item.quantity <= 0) {
+                // Remove item if quantity is 0 or less
+                cart = cart.filter(item => item.id !== productId);
+            }
+            
+            saveCart();
+            renderCartItems();
+        }
+        
+        // Remove item from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCart();
+            renderCartItems();
+            
+            // Show notification
+            const product = getProductById(productId);
+            if (product) {
+                showNotification(`${product.name} removed from cart`);
+            }
+        }
+        
+        // Clear cart
+        function clearCart() {
+            cart = [];
+            saveCart();
+            renderCartItems();
+        }
+        
+        // ============================================
+        // PAGE MANAGEMENT
+        // ============================================
+        
+        // Switch between pages
+        function switchPage(pageName) {
+            // Update current page
+            currentPage = pageName;
+            
+            // Hide all pages
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show target page
+            const targetPage = document.getElementById(`${pageName}-page`);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Update active nav link
+            navLinks.forEach(link => {
+                if (link.getAttribute('data-page') === pageName) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            
+            // Handle page-specific initializations
+            switch (pageName) {
+                case 'home':
+                    renderFeaturedProducts();
+                    break;
+                case 'products':
+                    renderAllProducts(selectedCategory);
+                    break;
+                case 'cart':
+                    renderCartItems();
+                    break;
+                case 'dashboard':
+                    if (!currentUser) {
+                        switchPage('login');
+                    } else {
+                        renderDashboardOrders();
+                    }
+                    break;
+                case 'admin':
+                    // Don't need to do anything here, admin login handled separately
+                    break;
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // ============================================
+        // NOTIFICATIONS & UI EFFECTS
+        // ============================================
+        
+        // Show notification
+        function showNotification(message, type = 'success') {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div style="position: fixed; top: 100px; right: 20px; background-color: var(--card-bg); border-left: 4px solid var(--accent-green); padding: 1rem; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); z-index: 10000; min-width: 250px; max-width: 300px;">
+                    <div style="display: flex; align-items: center; gap: 0.8rem;">
+                        <i class="fas fa-check-circle" style="color: var(--accent-green); font-size: 1.2rem;"></i>
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 0.2rem;">SUCCESS</div>
+                            <div style="color: var(--text-secondary); font-size: 0.9rem;">${message}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        // Typing animation for hero text
+        function typeWriter(text, element, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    // Restart animation after a delay
+                    setTimeout(() => {
+                        i = 0;
+                        element.innerHTML = '';
+                        type();
+                    }, 3000);
+                }
+            }
+            
+            type();
+        }
+        
+        // Matrix rain animation
+        function initMatrixRain() {
+            const canvas = document.getElementById('matrixRain');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas dimensions
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            // Matrix characters
+            const matrixChars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
+            const chars = matrixChars.split("");
+            
+            // Font size
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            
+            // Raindrops
+            const drops = [];
+            for (let i = 0; i < columns; i++) {
+                drops[i] = Math.floor(Math.random() * canvas.height / fontSize) * fontSize;
+            }
+            
+            // Draw function
+            function draw() {
+                // Semi-transparent black background for trail effect
+                ctx.fillStyle = "rgba(10, 10, 14, 0.04)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Set text style
+                ctx.fillStyle = "#00ff9d";
+                ctx.font = `${fontSize}px 'Courier New', monospace`;
+                
+                // Draw characters
+                for (let i = 0; i < drops.length; i++) {
+                    // Random character
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    
+                    // Draw character
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    
+                    // Move drop down
+                    drops[i] += fontSize;
+                    
+                    // Reset drop if it goes beyond canvas
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                }
+            }
+            
+            // Animation loop
+            setInterval(draw, 50);
+            
+            // Resize handler
+            window.addEventListener('resize', function() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+        
+        // Generate PDF invoice
+        function generateInvoice(orderId) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Add logo/text at the top
+            doc.setFontSize(20);
+            doc.setTextColor(0, 255, 157);
+            doc.text('ZX3STORE', 105, 20, null, null, 'center');
+            
+            doc.setFontSize(12);
+            doc.setTextColor(100, 100, 100);
+            doc.text('INVOICE', 105, 30, null, null, 'center');
+            doc.text(`Order ID: ${orderId}`, 105, 38, null, null, 'center');
+            
+            // Add date
+            const date = new Date().toLocaleDateString();
+            doc.text(`Date: ${date}`, 105, 46, null, null, 'center');
+            
+            // Add line
+            doc.setDrawColor(0, 255, 157);
+            doc.line(20, 55, 190, 55);
+            
+            // Add order details
+            doc.setFontSize(14);
+            doc.setTextColor(0, 0, 0);
+            doc.text('Order Details', 20, 65);
+            
+            // Sample order data
+            doc.setFontSize(10);
+            doc.text('Product: Netflix Premium', 20, 75);
+            doc.text('Price: $4.99', 20, 82);
+            doc.text('Warranty: 30 days', 20, 89);
+            
+            // Add payment info
+            doc.setFontSize(14);
+            doc.text('Payment Information', 20, 105);
+            
+            doc.setFontSize(10);
+            doc.text('Method: Bitcoin (BTC)', 20, 115);
+            doc.text('Transaction ID: 1A2b3C4d5E6f7G8h9I0jK1L2m3N4o5P6q', 20, 122);
+            doc.text('Status: COMPLETED', 20, 129);
+            
+            // Add total
+            doc.setFontSize(14);
+            doc.text('Total: $4.99', 20, 145);
+            
+            // Add footer note
+            doc.setFontSize(8);
+            doc.setTextColor(100, 100, 100);
+            doc.text('All sales are final. No refunds. Use at your own risk.', 105, 280, null, null, 'center');
+            
+            // Save the PDF
+            doc.save(`zx3store-invoice-${orderId}.pdf`);
+            
+            // Show notification
+            showNotification(`Invoice ${orderId} downloaded`);
+        }
+        
+        // ============================================
+        // EVENT LISTENERS
+        // ============================================
+        
+        // Initialize the application
+        function init() {
+            // Simulate preloader progress
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                progress += 2;
+                preloaderProgress.style.width = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(progressInterval);
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                        
+                        // Initialize typing animation
+                        typeWriter("Zx3Store — Premium Cracked. Cheap. Instant.", typingText);
+                        
+                        // Initialize matrix rain
+                        initMatrixRain();
+                        
+                        // Render featured products
+                        renderFeaturedProducts();
+                        
+                        // Update cart count
+                        updateCartCount();
+                    }, 300);
+                }
+            }, 30);
+            
+            // Navigation event listeners
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    switchPage(page);
+                });
+            });
+            
+            // Logo click event
+            logo.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchPage('home');
+            });
+            
+            // Category buttons
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Get category
+                    const category = this.getAttribute('data-category');
+                    selectedCategory = category;
+                    
+                    // If on products page, filter products
+                    if (currentPage === 'products') {
+                        renderAllProducts(category);
+                    }
+                    
+                    // If on home page, switch to products page with filter
+                    if (currentPage === 'home') {
+                        switchPage('products');
+                    }
+                });
+            });
+            
+            // Search products
+            if (searchProductsInput) {
+                searchProductsInput.addEventListener('input', function() {
+                    renderAllProducts(selectedCategory, this.value, sortProductsSelect.value);
+                });
+            }
+            
+            // Sort products
+            if (sortProductsSelect) {
+                sortProductsSelect.addEventListener('change', function() {
+                    renderAllProducts(selectedCategory, searchProductsInput.value, this.value);
+                });
+            }
+            
+            // Back to products button
+            if (backToProductsBtn) {
+                backToProductsBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    switchPage('products');
+                });
+            }
+            
+            // Add to cart button on product detail page
+            if (addToCartBtn) {
+                addToCartBtn.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    addToCart(productId);
+                });
+            }
+            
+            // Buy now button on product detail page
+            if (buyNowBtn) {
+                buyNowBtn.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    addToCart(productId);
+                    switchPage('cart');
+                });
+            }
+            
+            // Apply promo code
+            if (applyPromoBtn) {
+                applyPromoBtn.addEventListener('click', function() {
+                    const code = promoCodeInput.value.trim().toUpperCase();
+                    
+                    if (code === 'ZX310' || code === 'WELCOME10') {
+                        // Apply 10% discount
+                        const subtotal = cart.reduce((total, item) => {
+                            const product = getProductById(item.id);
+                            return total + (product.price * item.quantity);
+                        }, 0);
+                        
+                        const discount = subtotal * 0.1;
+                        cartDiscount.textContent = formatCurrency(discount);
+                        
+                        const serviceFee = 1.99;
+                        const total = subtotal + serviceFee - discount;
+                        cartTotal.textContent = formatCurrency(total);
+                        paymentAmount.textContent = formatCurrency(total);
+                        
+                        showNotification(`Promo code applied! 10% discount added.`);
+                    } else if (code) {
+                        showNotification(`Invalid promo code`, 'error');
+                    }
+                });
+            }
+            
+            // Proceed to checkout
+            if (proceedCheckoutBtn) {
+                proceedCheckoutBtn.addEventListener('click', function() {
+                    if (cart.length === 0) {
+                        showNotification('Your cart is empty', 'error');
+                        return;
+                    }
+                    
+                    switchPage('checkout');
+                });
+            }
+            
+            // Payment method selection
+            paymentMethods.forEach(method => {
+                method.addEventListener('click', function() {
+                    // Update active payment method
+                    paymentMethods.forEach(m => m.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update wallet address based on selected method
+                    const methodType = this.getAttribute('data-method');
+                    let address = '';
+                    
+                    switch (methodType) {
+                        case 'btc':
+                            address = 'bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh';
+                            break;
+                        case 'xmr':
+                            address = '48edfHKwV6V6z4RwzR5q5TT3Jp5p9z5v5V5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5';
+                            break;
+                        case 'usdt':
+                            address = 'TY7vT5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5';
+                            break;
+                        case 'ltc':
+                            address = 'LZ7vT5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5v5';
+                            break;
+                    }
+                    
+                    walletAddress.textContent = address;
+                    
+                    // Update copy button data attribute
+                    copyButtons.forEach(btn => {
+                        btn.setAttribute('data-address', address);
+                    });
+                });
+            });
+            
+            // Copy wallet address
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const address = this.getAttribute('data-address');
+                    navigator.clipboard.writeText(address)
+                        .then(() => {
+                            const originalText = this.innerHTML;
+                            this.innerHTML = '<i class="fas fa-check"></i> COPIED';
+                            setTimeout(() => {
+                                this.innerHTML = originalText;
+                            }, 2000);
+                            showNotification('Wallet address copied to clipboard');
+                        })
+                        .catch(err => {
+                            console.error('Failed to copy: ', err);
+                        });
+                });
+            });
+            
+            // Confirm payment
+            if (confirmPaymentBtn) {
+                confirmPaymentBtn.addEventListener('click', function() {
+                    const txid = txidInput.value.trim();
+                    
+                    if (!txid) {
+                        showNotification('Please enter your transaction ID', 'error');
+                        return;
+                    }
+                    
+                    // Simulate order processing
+                    showNotification('Order confirmed! Processing your delivery...');
+                    
+                    // Clear cart
+                    clearCart();
+                    
+                    // Switch to dashboard after delay
+                    setTimeout(() => {
+                        if (currentUser) {
+                            switchPage('dashboard');
+                        } else {
+                            switchPage('home');
+                        }
+                    }, 3000);
+                });
+            }
+            
+            // Dashboard menu
+            dashboardMenuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Update active menu item
+                    dashboardMenuLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const section = this.getAttribute('data-dashboard');
+                    
+                    dashboardSections.forEach(sec => {
+                        sec.classList.add('hidden');
+                    });
+                    
+                    const targetSection = document.getElementById(`dashboard-${section}`);
+                    if (targetSection) {
+                        targetSection.classList.remove('hidden');
+                    }
+                });
+            });
+            
+            // Logout
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentUser = null;
+                    localStorage.removeItem('zx3store_user');
+                    switchPage('home');
+                    showNotification('Logged out successfully');
+                });
+            }
+            
+            // Login
+            if (loginBtn) {
+                loginBtn.addEventListener('click', function() {
+                    const username = loginUsername.value.trim();
+                    const password = loginPassword.value.trim();
+                    
+                    if (!username || !password) {
+                        showNotification('Please enter username and password', 'error');
+                        return;
+                    }
+                    
+                    // Simulate login (in real app, this would validate against server)
+                    currentUser = {
+                        username: username,
+                        email: `${username}@example.com`
+                    };
+                    
+                    localStorage.setItem('zx3store_user', JSON.stringify(currentUser));
+                    
+                    showNotification(`Welcome back, ${username}!`);
+                    switchPage('dashboard');
+                });
+            }
+            
+            // Admin login
+            if (adminLoginBtn) {
+                adminLoginBtn.addEventListener('click', function() {
+                    const password = adminPasswordInput.value.trim();
+                    
+                    if (password === ADMIN_PASSWORD) {
+                        adminLoginDiv.style.display = 'none';
+                        adminPanelDiv.style.display = 'block';
+                        
+                        // Render admin data
+                        renderAdminProducts();
+                    } else {
+                        showNotification('Invalid admin password', 'error');
+                    }
+                });
+            }
+            
+            // Admin tabs
+            adminTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Update active tab
+                    adminTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const section = this.getAttribute('data-admin');
+                    
+                    adminSections.forEach(sec => {
+                        sec.classList.remove('active');
+                    });
+                    
+                    const targetSection = document.getElementById(`admin-${section}`);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+            
+            // Chat widget
+            if (chatButton) {
+                chatButton.addEventListener('click', function() {
+                    chatWindow.style.display = 'block';
+                });
+            }
+            
+            if (chatClose) {
+                chatClose.addEventListener('click', function() {
+                    chatWindow.style.display = 'none';
+                });
+            }
+            
+            if (chatSend) {
+                chatSend.addEventListener('click', function() {
+                    const message = chatInput.value.trim();
+                    if (!message) return;
+                    
+                    // Add user message
+                    const userMessage = document.createElement('div');
+                    userMessage.className = 'chat-message user';
+                    userMessage.innerHTML = `
+                        <div class="message-bubble">${message}</div>
+                    `;
+                    chatBody.appendChild(userMessage);
+                    
+                    // Clear input
+                    chatInput.value = '';
+                    
+                    // Scroll to bottom
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                    
+                    // Simulate auto-reply after delay
+                    setTimeout(() => {
+                        const replies = [
+                            "Thanks for your message. Our support team will respond shortly.",
+                            "Please check our FAQ section for common questions.",
+                            "For faster assistance, contact us on Telegram: @zx3support",
+                            "Your issue has been noted. We'll get back to you soon.",
+                            "Is there anything specific you need help with?"
+                        ];
+                        
+                        const randomReply = replies[Math.floor(Math.random() * replies.length)];
+                        
+                        const supportMessage = document.createElement('div');
+                        supportMessage.className = 'chat-message support';
+                        supportMessage.innerHTML = `
+                            <div class="message-bubble">${randomReply}</div>
+                        `;
+                        chatBody.appendChild(supportMessage);
+                        
+                        // Scroll to bottom
+                        chatBody.scrollTop = chatBody.scrollHeight;
+                    }, 1000);
+                });
+            }
+            
+            // Support chat link
+            if (supportChatLink) {
+                supportChatLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    chatWindow.style.display = 'block';
+                });
+            }
+            
+            // Handle Enter key in chat
+            if (chatInput) {
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        chatSend.click();
+                    }
+                });
+            }
+            
+            // Handle Enter key in login
+            if (loginPassword) {
+                loginPassword.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        loginBtn.click();
+                    }
+                });
+            }
+            
+            // Handle Enter key in admin login
+            if (adminPasswordInput) {
+                adminPasswordInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        adminLoginBtn.click();
+                    }
+                });
+            }
+            
+            // Footer links
+            document.querySelectorAll('.footer-links a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const page = this.getAttribute('data-page');
+                    const category = this.getAttribute('data-category');
+                    const dashboardSection = this.getAttribute('data-dashboard');
+                    
+                    if (page) {
+                        e.preventDefault();
+                        
+                        if (category) {
+                            selectedCategory = category;
+                            categoryButtons.forEach(btn => {
+                                btn.classList.remove('active');
+                                if (btn.getAttribute('data-category') === category) {
+                                    btn.classList.add('active');
+                                }
+                            });
+                        }
+                        
+                        switchPage(page);
+                    } else if (dashboardSection) {
+                        e.preventDefault();
+                        if (currentUser) {
+                            switchPage('dashboard');
+                            // Switch to the correct dashboard section
+                            setTimeout(() => {
+                                document.querySelector(`[data-dashboard="${dashboardSection}"]`).click();
+                            }, 100);
+                        } else {
+                            switchPage('login');
+                        }
+                    }
+                });
+            });
+            
+            // Initialize GSAP animations
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Animate product cards on scroll
+            gsap.utils.toArray('.product-card').forEach(card => {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    },
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power2.out"
+                });
+            });
+        }
+        
+        // Initialize the application when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
